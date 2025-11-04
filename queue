@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<conio.h>
+#define SIZE 10
+int queue[SIZE];
+int front = -1;
+int rear = -1;
+void enqueue(int value) {
+    if (rear == SIZE - 1) {
+        printf("Queue is full");
+    } else {
+        if (front == -1)
+            front = 0;
+        rear++;
+        queue[rear] = value;
+        printf("%d inserted into queue", value);
+    }
+}
+void dequeue() {
+    if (front == -1 || front > rear) {
+        printf("Queue is empty");
+    } else {
+        printf("%d removed from queue", queue[front]);
+        front++;
+    }
+}
+void display(){
+   printf("Queue elements are:\n");
+    for (int i = front; i <= rear; i++)
+        printf("%d ", queue[i]);
+
+}
+
+void main() {
+    int value,choice;
+    while(1)
+    {
+       printf("\n Enter the choice 1.Enqueue 2.Dequeue 3.Display 4.Exit \n");
+       scanf("%d",&choice);
+       switch(choice)
+       {
+
+           case 1:printf("Enter the element to be inserted");
+                  scanf("%d",&value);
+                  enqueue(value);
+                  break;
+           case 2: dequeue();
+                   break;
+           case 3: display();
+                   break;
+            case 4: exit(0);
+
+       }
+    }
+
+    return 0;
+}
