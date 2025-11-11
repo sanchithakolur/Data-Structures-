@@ -101,7 +101,7 @@ void leftins(int val)
 {
     if (front == 0)
     {
-        printf("Cannot insert from left — Queue full on left side\n");
+        printf("Cannot insert from left â€” Queue full on left side\n");
         return;
     }
 
