@@ -8,7 +8,7 @@ struct Node {
 
 struct Node* head = NULL;
 
-// Create a new node
+
 struct Node* createNode(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
@@ -16,7 +16,7 @@ struct Node* createNode(int value) {
     return newNode;
 }
 
-// a) Create Linked List
+
 void createList(int n) {
     int value;
     if (n <= 0) return;
@@ -35,14 +35,12 @@ void createList(int n) {
     }
 }
 
-// Insert at beginning
 void insertAtBeginning(int value) {
     struct Node* newNode = createNode(value);
     newNode->next = head;
     head = newNode;
 }
 
-// Insert at end
 void insertAtEnd(int value) {
     struct Node* newNode = createNode(value);
 
@@ -58,7 +56,6 @@ void insertAtEnd(int value) {
     temp->next = newNode;
 }
 
-// Insert at a specific position
 void insertAtPosition(int value, int position) {
     if (position == 1) {
         insertAtBeginning(value);
@@ -81,7 +78,6 @@ void insertAtPosition(int value, int position) {
     temp->next = newNode;
 }
 
-// Insert AFTER an element
 void insertAfterElement(int value, int element) {
     struct Node* temp = head;
 
@@ -99,7 +95,6 @@ void insertAfterElement(int value, int element) {
     temp->next = newNode;
 }
 
-// Insert BEFORE an element
 void insertBeforeElement(int value, int element) {
     if (head == NULL) {
         printf("List is empty!\n");
@@ -126,7 +121,6 @@ void insertBeforeElement(int value, int element) {
     temp->next = newNode;
 }
 
-// c) Display linked list
 void displayList() {
     struct Node* temp = head;
 
@@ -143,7 +137,6 @@ void displayList() {
     printf("NULL\n");
 }
 
-// Length of linked list
 int lengthOfList() {
     int count = 0;
     struct Node* temp = head;
@@ -156,7 +149,6 @@ int lengthOfList() {
     return count;
 }
 
-// Main function
 int main() {
     int choice, n, value, position, element;
 
